@@ -73,20 +73,6 @@ Progress is calculated from saved deposits minus withdrawals, divided by the goa
 
 ![Goal detail hero showing the uploaded photo and savings progress](screenshots/goal-detail-photo-progress.png)
 
-## Visual references
-
-### Mobile wealth app layout inspiration
-
-![Mobile wealth app layout inspiration](inspo%20UI/Screenshot%20from%202026-10-10%2000-52-41.png)
-
-### Typography inspiration: DM Sans and star mark
-
-![Typography inspiration showing DM Sans and the star mark](inspo%20UI/Screenshot%20from%202026-10-10%2000-52-49.png)
-
-### Color inspiration: lilac, violet, black, and white
-
-![Color inspiration showing the app palette](inspo%20UI/Screenshot%20from%202026-10-10%2000-52-55.png)
-
 ## Project structure
 
 ```text
