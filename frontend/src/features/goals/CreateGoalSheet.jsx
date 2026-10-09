@@ -113,7 +113,7 @@ function CreateGoalSheet({ onClose, onCreate }) {
             </div>
           ) : (
             <div className="form-row plan-input-row">
-              <label className="form-field"><span>I want to reach it in</span><select value={daysChoice} onChange={(event) => setDaysChoice(event.target.value)}><option value="30">30 days</option><option value="90">90 days</option><option value="180">180 days</option><option value="365">365 days</option><option value="custom">Custom</option></select></label>
+              <label className={`form-field ${daysChoice !== 'custom' ? 'field-wide' : ''}`}><span>I want to reach it in</span><select value={daysChoice} onChange={(event) => setDaysChoice(event.target.value)}><option value="30">30 days</option><option value="90">90 days</option><option value="180">180 days</option><option value="365">365 days</option><option value="custom">Custom</option></select></label>
               {daysChoice === 'custom' && <label className="form-field"><span>Number of days</span><input type="number" min="1" max="7300" value={customDays} onChange={(event) => setCustomDays(event.target.value)} placeholder="240" /> </label>}
             </div>
           )}

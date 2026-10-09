@@ -21,6 +21,7 @@ function TransactionSheet({ goal, onClose, onSave }) {
     if (!Number.isFinite(value) || value <= 0) return setError('Enter an amount greater than zero.')
     if (type === 'withdraw' && value > available) return setError('You can withdraw up to the amount saved so far.')
     if (!date || date > localToday()) return setError('Choose today or a date in the past.')
+    if (date < goal.createdAt) return setError('Choose a date on or after you created this goal.')
     onSave({ amount: value, type, date })
   }
 
@@ -37,7 +38,7 @@ function TransactionSheet({ goal, onClose, onSave }) {
         </label>
         <label className="form-field">
           <span>Date</span>
-          <input type="date" value={date} max={localToday()} onChange={(event) => setDate(event.target.value)} required />
+          <input type="date" value={date} min={goal.createdAt} max={localToday()} onChange={(event) => setDate(event.target.value)} required />
         </label>
         {error && <p className="form-error" role="alert">{error}</p>}
         <Button type="submit" className="sheet-submit">{type === 'add' ? 'Save deposit' : 'Save withdrawal'} <span aria-hidden="true">↗</span></Button>
