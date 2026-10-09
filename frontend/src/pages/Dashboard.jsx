@@ -12,7 +12,6 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal, onReset }
           <BrandMark />
           <span>on the horizon</span>
         </a>
-        <span className="topbar-note">Money as light.</span>
       </header>
 
       <section className="dashboard-content">
@@ -38,11 +37,14 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal, onReset }
         ) : (
           <section className="empty-gallery">
             <div className="empty-art" aria-hidden="true">
-              <BrandMark className="empty-brand-mark" showStar />
+              <BrandMark className="empty-brand-mark" />
+              <div className="coin-pile coin-pile-left"><i /><i /><i /><i /><b>$</b></div>
+              <div className="coin-pile coin-pile-right"><i /><i /><i /><b>$</b></div>
+              <div className="coin-pile coin-pile-small"><i /><i /><b>$</b></div>
             </div>
             <p className="empty-kicker">EVERY BIG THING STARTS SOMEWHERE</p>
-            <h2>Bring your dreams<br />into focus.</h2>
-            <p className="empty-description">Start with a trip, a first car, or a day you’ve been dreaming about. Give it a picture and a plan.</p>
+            <h2>Start with one goal.</h2>
+            <p className="empty-description">Choose something you’re looking forward to, add its photo, and give it a savings plan.</p>
             <Button onClick={onCreateGoal}>Create your first goal <span aria-hidden="true">↗</span></Button>
           </section>
         )}
