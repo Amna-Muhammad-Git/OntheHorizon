@@ -38,9 +38,6 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal, onReset }
           <section className="empty-gallery">
             <div className="empty-art" aria-hidden="true">
               <BrandMark className="empty-brand-mark" />
-              <div className="coin-pile coin-pile-left"><i /><i /><i /><i /><b>$</b></div>
-              <div className="coin-pile coin-pile-right"><i /><i /><i /><b>$</b></div>
-              <div className="coin-pile coin-pile-small"><i /><i /><b>$</b></div>
             </div>
             <p className="empty-kicker">EVERY BIG THING STARTS SOMEWHERE</p>
             <h2>Start with one goal.</h2>
