@@ -2,7 +2,7 @@ import Button from '../components/Button.jsx'
 import BrandMark from '../components/BrandMark.jsx'
 import GoalCard from '../features/goals/GoalCard.jsx'
 
-function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal }) {
+function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal, onReset }) {
   const hasGoals = goals.length > 0
 
   return (
@@ -50,7 +50,7 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal }) {
 
       <footer className="page-footer">
         <span>Goals are personal. Your data stays on this device.</span>
-        <span>Progress, made visible <span className="footer-star">✦</span></span>
+        <span className="footer-actions"><span>Progress, made visible <span className="footer-star">✦</span></span><button type="button" className="reset-data-button" onClick={onReset}>Reset app data</button></span>
       </footer>
     </main>
   )

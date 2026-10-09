@@ -2,7 +2,7 @@
 
 React + Vite + Tailwind single-page app for the On the Horizon prototype. Keep app state and persistence in the browser for the first demo; store only goals, deposits, and plan settings. Derive progress, price projections, blur, and grayscale at render time.
 
-The prototype includes a savings gallery, goal creation with compressed photo uploads, fixed-amount and target-date plans, goal projections, and deposit/withdrawal history. Goals are stored locally in the browser under `on-the-horizon-goals-v1`; clearing this browser's site data removes them.
+The prototype includes a savings gallery, goal creation with compressed photo uploads, fixed-amount and target-date plans, goal projections, and deposit/withdrawal history. Goals are stored locally in the browser under `on-the-horizon-goals-v1`; use **Reset app data** in the dashboard footer or clear this browser's site data to remove them.
 
 ## Run locally
 

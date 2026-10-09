@@ -99,6 +99,21 @@ function App() {
     setScreen('detail')
   }
 
+  function resetAppData() {
+    const confirmed = window.confirm('Delete all saved goals, photos, and transaction history from this browser?')
+    if (!confirmed) return
+    try {
+      window.localStorage.removeItem(STORAGE_KEY)
+      setStorageWarning('')
+    } catch {
+      setStorageWarning('Browser storage could not be cleared. Remove the app data from your browser settings.')
+    }
+    setGoals([])
+    setActiveGoalId(null)
+    setSheet(null)
+    setScreen('dashboard')
+  }
+
   return (
     <>
       {screen === 'detail' && activeGoal ? (
@@ -109,6 +124,7 @@ function App() {
           onCreateGoal={() => setSheet('create')}
           onAddMoney={openTransaction}
           onOpenGoal={openGoal}
+          onReset={resetAppData}
         />
       )}
 
