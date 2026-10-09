@@ -1,4 +1,5 @@
 import Button from '../components/Button.jsx'
+import BrandMark from '../components/BrandMark.jsx'
 import ProgressChip from '../components/ProgressChip.jsx'
 import StarMark from '../components/StarMark.jsx'
 import { fixedPlanResult, goalSnapshot, targetDatePlanResult } from '../utils/projection.js'
@@ -39,7 +40,7 @@ function GoalDetail({ goal, onBack, onAddMoney }) {
     <main className="app-shell detail-shell">
       <header className="topbar">
         <button className="back-button" onClick={onBack}><span aria-hidden="true">←</span> Gallery</button>
-        <a className="brand" href="#home" aria-label="On the Horizon home"><StarMark className="brand-mark" /><span>on the horizon</span></a>
+        <a className="brand" href="#home" aria-label="On the Horizon home"><BrandMark /><span>on the horizon</span></a>
         <span className="topbar-note">Your horizon</span>
       </header>
 

@@ -40,7 +40,14 @@ a { color: inherit; text-decoration: none; }
 }
 .topbar { display: flex; width: 100%; max-width: 1440px; height: 88px; align-items: center; justify-content: space-between; margin: 0 auto; border-bottom: 1px solid var(--color-line); }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 15px; font-weight: 600; letter-spacing: -.04em; }
-.brand-mark { width: 25px; height: 25px; color: var(--color-lilac); }
+.brand-orbit-mark { position: relative; display: inline-block; width: 34px; height: 34px; flex: 0 0 auto; }
+.brand-orbit { position: absolute; top: 50%; left: 50%; width: 88%; height: 41%; border: 1px solid rgb(248 212 253 / 48%); border-radius: 50%; }
+.brand-orbit::after { position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; border-radius: 50%; background: var(--color-lilac); box-shadow: 0 0 8px rgb(248 212 253 / 85%); content: ''; transform: translateX(-50%); }
+.brand-orbit-one { animation: brand-orbit-forward 18s linear infinite; }
+.brand-orbit-two { width: 72%; height: 34%; border-color: rgb(141 53 255 / 75%); animation: brand-orbit-reverse 13s linear infinite; }
+.brand-center-star { position: absolute; top: 50%; left: 50%; width: 39%; height: 39%; color: var(--color-lilac); filter: drop-shadow(0 0 8px rgb(248 212 253 / 45%)); transform: translate(-50%, -50%); }
+@keyframes brand-orbit-forward { from { transform: translate(-50%, -50%) rotate(-34deg); } to { transform: translate(-50%, -50%) rotate(326deg); } }
+@keyframes brand-orbit-reverse { from { transform: translate(-50%, -50%) rotate(52deg); } to { transform: translate(-50%, -50%) rotate(-308deg); } }
 .topbar-note { color: var(--color-muted); font-size: 13px; }
 
 .welcome-layout { display: grid; width: 100%; max-width: 1240px; flex: 1; align-items: center; grid-template-columns: 1fr minmax(340px, 510px); gap: clamp(48px, 10vw, 150px); margin: 0 auto; padding: 66px 0 86px; }
@@ -116,9 +123,8 @@ a { color: inherit; text-decoration: none; }
 
 .empty-gallery { display: flex; min-height: 480px; flex-direction: column; align-items: center; justify-content: center; padding: 25px 20px 38px; border: 1px solid var(--color-line); border-radius: 28px; background: radial-gradient(ellipse at 50% 24%, rgb(115 0 255 / 10%), transparent 48%), linear-gradient(145deg, rgb(255 255 255 / 3%), transparent 55%), #0d0b0f; text-align: center; }
 .empty-art { position: relative; width: 90px; height: 90px; margin-bottom: 22px; }
-.empty-orbit { position: absolute; inset: 9px; border: 1px solid rgb(248 212 253 / 20%); border-radius: 50%; transform: rotate(-30deg) scaleY(.46); }
-.orbit-two { inset: 17px 1px; transform: rotate(35deg) scaleY(.48); }
-.empty-star { position: absolute; inset: 0; width: 19px; height: 19px; margin: auto; color: var(--color-lilac); filter: drop-shadow(0 0 20px rgb(248 212 253 / 80%)); }
+.empty-brand-mark { width: 90px; height: 90px; }
+.empty-brand-mark .brand-center-star { filter: drop-shadow(0 0 14px rgb(248 212 253 / 80%)); }
 .empty-kicker { margin: 0 0 12px; color: var(--color-lilac); font-size: 9px; font-weight: 600; letter-spacing: .17em; }
 .empty-gallery h2 { margin: 0; font-size: clamp(33px, 5vw, 45px); font-weight: 500; letter-spacing: -.065em; line-height: 1.04; }
 .empty-description { max-width: 330px; margin: 15px 0 23px; color: #a39ba8; font-size: 13px; line-height: 1.7; }
@@ -275,4 +281,5 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .bottom-sheet { animation: none; }
+  .brand-orbit-one, .brand-orbit-two { animation: none; }
 }

@@ -1,5 +1,5 @@
 import Button from '../components/Button.jsx'
-import StarMark from '../components/StarMark.jsx'
+import BrandMark from '../components/BrandMark.jsx'
 import GoalCard from '../features/goals/GoalCard.jsx'
 
 function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal }) {
@@ -9,7 +9,7 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal }) {
     <main className="app-shell dashboard-shell">
       <header className="topbar">
         <a className="brand" href="#home" aria-label="On the Horizon home">
-          <StarMark className="brand-mark" />
+          <BrandMark />
           <span>on the horizon</span>
         </a>
         <span className="topbar-note">Money as light.</span>
@@ -38,13 +38,11 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal }) {
         ) : (
           <section className="empty-gallery">
             <div className="empty-art" aria-hidden="true">
-              <span className="empty-orbit orbit-one" />
-              <span className="empty-orbit orbit-two" />
-              <StarMark className="empty-star" />
+              <BrandMark className="empty-brand-mark" />
             </div>
             <p className="empty-kicker">EVERY BIG THING STARTS SOMEWHERE</p>
-            <h2>What are you<br />looking forward to?</h2>
-            <p className="empty-description">A trip, a first car, a day you’ve been dreaming about. Give it a picture and a plan.</p>
+            <h2>Bring your dreams<br />into focus.</h2>
+            <p className="empty-description">Start with a trip, a first car, or a day you’ve been dreaming about. Give it a picture and a plan.</p>
             <Button onClick={onCreateGoal}>Create your first goal <span aria-hidden="true">↗</span></Button>
           </section>
         )}
