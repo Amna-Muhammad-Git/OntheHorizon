@@ -1,11 +1,11 @@
 import StarMark from './StarMark.jsx'
 
-function BrandMark({ className = '' }) {
+function BrandMark({ className = '', showStar = false }) {
   return (
     <span className={`brand-orbit-mark ${className}`.trim()} aria-hidden="true">
       <span className="brand-orbit brand-orbit-one" />
       <span className="brand-orbit brand-orbit-two" />
-      <StarMark className="brand-center-star" />
+      {showStar && <StarMark className="brand-center-star" />}
     </span>
   )
 }

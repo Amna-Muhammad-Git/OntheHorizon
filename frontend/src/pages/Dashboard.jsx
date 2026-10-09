@@ -38,7 +38,7 @@ function Dashboard({ goals = [], onCreateGoal, onAddMoney, onOpenGoal }) {
         ) : (
           <section className="empty-gallery">
             <div className="empty-art" aria-hidden="true">
-              <BrandMark className="empty-brand-mark" />
+              <BrandMark className="empty-brand-mark" showStar />
             </div>
             <p className="empty-kicker">EVERY BIG THING STARTS SOMEWHERE</p>
             <h2>Bring your dreams<br />into focus.</h2>
